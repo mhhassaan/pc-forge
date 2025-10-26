@@ -52,3 +52,24 @@ document.querySelectorAll(".faq-question").forEach((question) => {
     }
   })
 })
+
+// Simple hamburger toggle for mobile navigation (safe: checks for elements)
+;(function () {
+  const hamburger = document.getElementById('hamburger')
+  const navMenu = document.getElementById('navMenu') || document.querySelector('.nav-menu')
+  const navAuth = document.querySelector('.nav-auth')
+
+  if (!hamburger || !navMenu) return
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active')
+    // the CSS uses .nav-menu.active to open the menu at small widths
+    navMenu.classList.toggle('active')
+
+    // toggle auth panel visibility if it exists
+    if (navAuth) navAuth.classList.toggle('active')
+
+    // Prevent background page from scrolling when nav is open on mobile
+    document.body.classList.toggle('nav-open')
+  })
+})()

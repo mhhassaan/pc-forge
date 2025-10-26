@@ -1028,12 +1028,17 @@ footer {
     gap: 0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.25s ease, box-shadow 0.25s;
     border-bottom: 2px solid var(--retro-border);
+    z-index: 250;
   }
 
   .nav-menu.active {
-    max-height: 400px;
+    /* allow the menu to grow and scroll independently on small screens */
+    max-height: calc(100vh - 56px); /* leave room for navbar height */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6);
   }
 
   .nav-menu li {
@@ -1055,17 +1060,20 @@ footer {
     top: 100%;
     right: 0;
     width: 100%;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
     border-top: 1px solid var(--retro-border);
     background-color: var(--secondary);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.25s ease, opacity 0.25s ease;
+    opacity: 0;
   }
 
-  .nav-menu.active ~ .nav-auth {
-    max-height: 100px;
-  }
+  /* When the menu opens we keep auth hidden so the menu can occupy the space and scroll */
+  /* .nav-menu.active ~ .nav-auth {
+    max-height: 0;
+    opacity: 0;
+  } */
 
   .hero {
     grid-template-columns: 1fr;
@@ -1103,8 +1111,66 @@ footer {
     gap: 1rem;
     text-align: center;
   }
+
+  /* When nav is open prevent background scrolling */
+  /* body.nav-open {
+    overflow: hidden;
+    height: 100vh;
+  } */
 }
 
 /* main {
   flex: 1;
 } */
+
+/* Small-screen fixes: reduce hero heading size, remove extreme letter-spacing/uppercase for better wrapping */
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 0.75rem;
+  }
+
+  .nav-logo .logo-image {
+    height: 44px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero {
+    padding: 1.25rem 0.75rem;
+    border-bottom: 1px solid var(--retro-border);
+  }
+
+  .hero-content h1 {
+    font-size: 1.6rem !important; /* force smaller on very small screens */
+    line-height: 1.25;
+    letter-spacing: 0px !important;
+    text-transform: none !important; /* preserve original sentence case to avoid large gaps */
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    word-break: break-word;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  .hero-visual {
+    padding: 0.75rem;
+  }
+
+  /* Make buttons fit better on phones */
+  .btn-large {
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  /* Ensure sections stack and don't overflow */
+  .features-grid,
+  .carousel,
+  .articles-grid,
+  .tips-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
