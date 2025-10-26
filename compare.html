@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Components - PCForge</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/compare.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">🖥️🔎</span>
+                <span>PCForge</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="build.html" class="nav-link">Build PC</a></li>
+                <li><a href="compare.html" class="nav-link active">Compare</a></li>
+                <li><a href="learn.html" class="nav-link">Learn</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-auth">
+                <button id="authBtn" class="btn btn-primary">Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="compare-container">
+        <h1>Compare Components</h1>
+        <p class="subtitle">Select two components to compare their specifications side-by-side</p>
+
+        <div class="compare-selectors">
+            <div class="selector-group">
+                <label>Component 1</label>
+                <select id="component1Type">
+                    <option value="">Select Type</option>
+                    <option value="cpu">CPU</option>
+                    <option value="gpu">GPU</option>
+                    <option value="motherboard">Motherboard</option>
+                    <option value="ram">RAM</option>
+                    <option value="storage">Storage</option>
+                </select>
+                <select id="component1" disabled>
+                    <option value="">Select Component</option>
+                </select>
+            </div>
+
+            <div class="selector-group">
+                <label>Component 2</label>
+                <select id="component2Type">
+                    <option value="">Select Type</option>
+                    <option value="cpu">CPU</option>
+                    <option value="gpu">GPU</option>
+                    <option value="motherboard">Motherboard</option>
+                    <option value="ram">RAM</option>
+                    <option value="storage">Storage</option>
+                </select>
+                <select id="component2" disabled>
+                    <option value="">Select Component</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="comparisonTable" class="comparison-table hidden">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Specification</th>
+                        <th id="comp1Header">Component 1</th>
+                        <th id="comp2Header">Component 2</th>
+                    </tr>
+                </thead>
+                <tbody id="comparisonBody">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="noSelection" class="no-selection">
+            <p>Select two components to see a detailed comparison</p>
+        </div>
+    
+    <!-- Popular Comparisons -->
+    <section class="popular-comparisons">
+        <h2>Popular Comparisons</h2>
+        <p class="subtitle">Quick comparisons our users view most</p>
+
+        <div class="comparisons-grid">
+            <article class="comparison-card">
+                <h3>NVIDIA RTX 4070 vs RTX 4080</h3>
+                <p>A look at FPS differences, VRAM requirements and value for 1440p and 4K gaming.</p>
+                <div class="card-meta">
+                    <span class="tag">GPU</span>
+                    <a href="#comparisonTable" class="btn btn-secondary">View Comparison</a>
+                </div>
+            </article>
+
+        <article class="comparison-card">
+            <h3>Intel Core i9-13900K vs AMD Ryzen 9 7950X</h3>
+            <p>A flagship showdown: comparing core counts, clock speeds, and productivity benchmarks for the ultimate workstation.</p>
+            <div class="card-meta">
+                <span class="tag">CPU</span>
+                <a href="#comparisonTable" class="btn btn-secondary">View Comparison</a>
+            </div>
+        </article>
+
+        <article class="comparison-card">
+            <h3>NVIDIA RTX 3060 vs AMD RX 6600</h3>
+            <p>The 1080p gaming sweet spot. See how they stack up in frame rates, ray tracing performance, and overall value.</p>
+            <div class="card-meta">
+                <span class="tag">GPU</span>
+                <a href="#comparisonTable" class="btn btn-secondary">View Comparison</a>
+            </div>
+        </article>
+
+        <article class="comparison-card">
+            <h3>Samsung 990 Pro 2TB vs WD Black SN850X 2TB</h3>
+            <p>Which Gen4 NVMe drive leads the pack? A head-to-head on read/write speeds, endurance, and pricing.</p>
+            <div class="card-meta">
+                <span class="tag">Storage</span>
+                <a href="#comparisonTable" class="btn btn-secondary">View Comparison</a>
+            </div>
+        </article>
+
+        <article class="comparison-card">
+            <h3>AMD Ryzen 7 5800X3D vs Intel Core i5-13600K</h3>
+            <p>Gaming loyalty test: Is the older 3D V-Cache king a better value than the new-generation Intel mid-ranger?</p>
+            <div class="card-meta">
+                <span class="tag">CPU</span>
+                <a href="#comparisonTable" class="btn btn-secondary">View Comparison</a>
+            </div>
+        </article>
+
+        <article class="comparison-card">
+            <h3>Intel Core i9-13900K vs AMD Ryzen 9 7950X</h3>
+            <p>A flagship showdown: comparing core counts, clock speeds, and productivity benchmarks for the ultimate workstation.</p>
+            <div class="card-meta">
+                <span class="tag">CPU</span>
+                <a href="#comparisonTable" class="btn btn-secondary">View Comparison</a>
+            </div>
+        </article>
+
+        <article class="comparison-card">
+            <h3>NVIDIA RTX 3060 vs AMD RX 6600</h3>
+            <p>The 1080p gaming sweet spot. See how they stack up in frame rates, ray tracing performance, and overall value.</p>
+            <div class="card-meta">
+                <span class="tag">GPU</span>
+                <a href="#comparisonTable" class="btn btn-secondary">View Comparison</a>
+            </div>
+        </article>
+
+        <article class="comparison-card">
+            <h3>Samsung 990 Pro 2TB vs WD Black SN850X 2TB</h3>
+            <p>Which Gen4 NVMe drive leads the pack? A head-to-head on read/write speeds, endurance, and pricing.</p>
+            <div class="card-meta">
+                <span class="tag">Storage</span>
+                <a href="#comparisonTable" class="btn btn-secondary">View Comparison</a>
+            </div>
+        </article>
+
+        <article class="comparison-card">
+            <h3>AMD Ryzen 7 5800X3D vs Intel Core i5-13600K</h3>
+            <p>Gaming loyalty test: Is the older 3D V-Cache king a better value than the new-generation Intel mid-ranger?</p>
+            <div class="card-meta">
+                <span class="tag">CPU</span>
+                <a href="#comparisonTable" class="btn btn-secondary">View Comparison</a>
+            </div>
+        </article>
+
+    </div>
+</section>
+</main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 PCForge | Designed for PC Enthusiasts</p>
+            <div class="social-links">
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Discord</a>
+                <a href="#" class="social-link">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Login</button>
+                    <button class="auth-tab" data-tab="signup">Sign Up</button>
+                </div>
+
+                <form id="loginForm" class="auth-form active">
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit" class="btn btn-primary btn-full">Login</button>
+                </form>
+
+                <form id="signupForm" class="auth-form">
+                    <input type="text" placeholder="Username" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Confirm Password" required>
+                    <button type="submit" class="btn btn-primary btn-full">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/build.js"></script>
+    <script src="js/compare.js"></script>
+</body>
+</html>

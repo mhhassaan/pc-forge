@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - PCForge</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">🖥️📞</span>
+                <span>PCForge</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="build.html" class="nav-link">Build PC</a></li>
+                <li><a href="compare.html" class="nav-link">Compare</a></li>
+                <li><a href="learn.html" class="nav-link">Learn</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <div class="nav-auth">
+                <button id="authBtn" class="btn btn-primary">Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="contact-container">
+        <div class="contact-content">
+            <section class="contact-info">
+                <h1>Get in Touch</h1>
+                <p class="subtitle">Have questions or feedback? We'd love to hear from you!</p>
+
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="info-icon">📧</div>
+                        <h3>Email</h3>
+                        <p>support@pcforge.com</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">💬</div>
+                        <h3>Discord</h3>
+                        <p>Join our community server</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🐦</div>
+                        <h3>Twitter</h3>
+                        <p>@PCForge</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-form-section">
+                <h2>Send us a Message</h2>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-accent btn-large">Send Message</button>
+                </form>
+            </section>
+        </div>
+
+        <section class="about-section">
+            <h2>About PCForge</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>PCForge is an educational platform designed to help users understand PC components and build their dream computers. Whether you're a gaming enthusiast, content creator, or professional, our tools make it easy to design, compare, and save custom PC builds.</p>
+                    <p>Our mission is to democratize PC building knowledge and make it accessible to everyone, from beginners to experienced builders.</p>
+                </div>
+                <div class="about-features">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Smart PC Builder with real-time pricing</li>
+                        <li>Component comparison tools</li>
+                        <li>Educational hardware guides</li>
+                        <li>Pre-built configuration gallery</li>
+                        <li>Save and manage your builds</li>
+                        <li>User authentication system</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="developer-credit">Developed as a hobby project | 2025</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 PCForge | Designed for PC Enthusiasts</p>
+            <div class="social-links">
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Discord</a>
+                <a href="#" class="social-link">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Login</button>
+                    <button class="auth-tab" data-tab="signup">Sign Up</button>
+                </div>
+
+                <form id="loginForm" class="auth-form active">
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit" class="btn btn-primary btn-full">Login</button>
+                </form>
+
+                <form id="signupForm" class="auth-form">
+                    <input type="text" placeholder="Username" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Confirm Password" required>
+                    <button type="submit" class="btn btn-primary btn-full">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

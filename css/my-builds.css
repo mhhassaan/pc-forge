@@ -1,0 +1,184 @@
+.my-builds-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - 200px);
+}
+
+.builds-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.builds-header h1 {
+  font-size: 2.5rem;
+}
+
+.builds-header .btn {
+  padding: 0.75rem 1.5rem;
+}
+
+.builds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.build-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.build-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 120, 215, 0.2);
+}
+
+.build-header {
+  background: linear-gradient(135deg, var(--primary), #0056a8);
+  padding: 1.5rem;
+  color: white;
+}
+
+.build-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.build-date {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.build-details {
+  padding: 1.5rem;
+}
+
+.component-list {
+  margin-bottom: 1.5rem;
+}
+
+.component-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.component-item:last-child {
+  border-bottom: none;
+}
+
+.component-label {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.component-value {
+  color: var(--text-primary);
+  text-align: right;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.build-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-top: 2px solid var(--border);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.total-price {
+  color: var(--accent);
+}
+
+.build-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.build-actions .btn {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.no-builds {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-secondary);
+}
+
+.no-builds h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.no-builds p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.login-prompt {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.login-prompt h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.login-prompt p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.login-prompt .btn {
+  padding: 0.75rem 2rem;
+}
+
+@media (max-width: 768px) {
+  .my-builds-container {
+    padding: 1rem;
+  }
+
+  .builds-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .builds-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .builds-header .btn {
+    width: 100%;
+  }
+
+  .builds-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .build-actions {
+    flex-direction: column;
+  }
+}

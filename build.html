@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build PC - PCForge</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/build.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">🖥️🪛</span>
+                <span>PCForge</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="build.html" class="nav-link active">Build PC</a></li>
+                <li><a href="compare.html" class="nav-link">Compare</a></li>
+                <li><a href="learn.html" class="nav-link">Learn</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-auth">
+                <button id="authBtn" class="btn btn-primary">Login</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="build-container">
+        <h1>Build Your PC</h1>
+        
+        <div class="build-layout">
+            <!-- Filters Sidebar -->
+            <aside class="filters-sidebar">
+                <h2>Filters</h2>
+                
+                <div class="filter-group">
+                    <label>Component Type</label>
+                    <select id="componentFilter">
+                        <option value="">All Components</option>
+                        <option value="cpu">CPU</option>
+                        <option value="gpu">GPU</option>
+                        <option value="motherboard">Motherboard</option>
+                        <option value="ram">RAM</option>
+                        <option value="storage">Storage</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Brand</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" class="brand-filter" value="Intel"> Intel</label>
+                        <label><input type="checkbox" class="brand-filter" value="AMD"> AMD</label>
+                        <label><input type="checkbox" class="brand-filter" value="NVIDIA"> NVIDIA</label>
+                        <label><input type="checkbox" class="brand-filter" value="Corsair"> Corsair</label>
+                        <label><input type="checkbox" class="brand-filter" value="Samsung"> Samsung</label>
+                        <label><input type="checkbox" class="brand-filter" value="Kingston"> Kingston</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label>Price Range: $<span id="priceValue">5000</span></label>
+                    <input type="range" id="priceRange" min="0" max="5000" value="5000" class="slider">
+                </div>
+
+                <div class="filter-group">
+                    <label>Key Specs</label>
+                    <input type="text" id="specsFilter" placeholder="e.g., 16 cores, 8GB VRAM" class="specs-input">
+                </div>
+
+                <button id="resetFilters" class="btn btn-secondary btn-full">Reset Filters</button>
+            </aside>
+
+            <!-- Components Grid -->
+            <section class="components-section">
+                <div class="sort-bar">
+                    <label for="sortSelect">Sort by:</label>
+                    <select id="sortSelect">
+                        <option value="default">Default</option>
+                        <option value="price-asc">Price: Low → High</option>
+                        <option value="price-desc">Price: High → Low</option>
+                        <option value="name-asc">Name: A → Z</option>
+                        <option value="name-desc">Name: Z → A</option>
+                        <option value="brand-asc">Brand: A → Z</option>
+                        <option value="brand-desc">Brand: Z → A</option>
+                    </select>
+                </div>
+                <div id="componentsList" class="components-grid">
+                    <!-- Components will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Live Summary Panel -->
+            <aside class="summary-panel">
+                <h2>Build Summary</h2>
+                <div id="buildSummary" class="summary-content">
+                <div class="summary-divider"></div>
+                    <div class="summary-total">
+                        <span>Total Cost</span>
+                        <span class="total-price">$0</span>
+                    </div>
+                </div>
+                <button id="saveBuildBtn" class="btn btn-accent btn-full" enable>Save Build</button>
+                <button id="myBuildsBtn" class="btn btn-secondary btn-full">My Builds</button>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 PCForge | Designed for PC Enthusiasts</p>
+            <div class="social-links">
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Discord</a>
+                <a href="#" class="social-link">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Login</button>
+                    <button class="auth-tab" data-tab="signup">Sign Up</button>
+                </div>
+
+                <form id="loginForm" class="auth-form active">
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit" class="btn btn-primary btn-full">Login</button>
+                </form>
+
+                <form id="signupForm" class="auth-form">
+                    <input type="text" placeholder="Username" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <input type="password" placeholder="Confirm Password" required>
+                    <button type="submit" class="btn btn-primary btn-full">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/build.js"></script>
+</body>
+</html>

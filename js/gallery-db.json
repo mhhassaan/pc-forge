@@ -1,0 +1,102 @@
+{
+  "builds": [
+    {
+      "id": 1,
+      "name": "Gaming Beast",
+      "category": "gaming",
+      "icon": "🎮",
+      "specs": "RTX 4070 • Ryzen 7 7700X • 32GB DDR5 • 1TB NVMe SSD",
+      "price": 1899,
+      "components": {
+        "cpu": "Ryzen 7 7700X",
+        "gpu": "RTX 4070",
+        "motherboard": "ROG STRIX X870-E",
+        "ram": "Corsair Vengeance 32GB",
+        "storage": "Samsung 990 Pro 2TB"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Workstation Pro",
+      "category": "workstation",
+      "icon": "💼",
+      "specs": "RTX 4090 • Ryzen 9 7950X • 64GB DDR5 • 2TB NVMe SSD",
+      "price": 3499,
+      "components": {
+        "cpu": "Ryzen 9 7950X",
+        "gpu": "RTX 4090",
+        "motherboard": "ROG STRIX X870-E",
+        "ram": "Corsair Vengeance 64GB",
+        "storage": "Samsung 990 Pro 2TB"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Budget Friendly",
+      "category": "budget",
+      "icon": "💰",
+      "specs": "RTX 4060 • Ryzen 5 5600X • 16GB DDR4 • 500GB SSD",
+      "price": 799,
+      "components": {
+        "cpu": "Ryzen 5 5600X",
+        "gpu": "RTX 4060",
+        "motherboard": "MPG B850E EDGE",
+        "ram": "Kingston Fury 16GB",
+        "storage": "Kingston KC3000 1TB"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Content Creator",
+      "category": "workstation",
+      "icon": "🎬",
+      "specs": "RTX 4080 • Ryzen 9 7900X • 48GB DDR5 • 2TB NVMe SSD",
+      "price": 2799,
+      "components": {
+        "cpu": "Ryzen 9 7950X",
+        "gpu": "RTX 4090",
+        "motherboard": "ROG STRIX X870-E",
+        "ram": "Corsair Vengeance 64GB",
+        "storage": "Samsung 990 Pro 2TB"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Streaming Setup",
+      "category": "gaming",
+      "icon": "📡",
+      "specs": "RTX 4070 Ti • Ryzen 7 7700X • 32GB DDR5 • 1TB NVMe SSD",
+      "price": 2199,
+      "components": {
+        "cpu": "Ryzen 7 7700X",
+        "gpu": "RTX 4070",
+        "motherboard": "ROG STRIX X870-E",
+        "ram": "Corsair Vengeance 32GB",
+        "storage": "Samsung 990 Pro 2TB"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Ultra High-End",
+      "category": "highend",
+      "icon": "👑",
+      "specs": "RTX 4090 • Intel i9-13900K • 128GB DDR5 • 4TB NVMe SSD",
+      "price": 5999,
+      "components": {
+        "cpu": "Intel Core i9-13900K",
+        "gpu": "RTX 4090",
+        "motherboard": "TUF Gaming Z790",
+        "ram": "Corsair Vengeance 64GB",
+        "storage": "Corsair MP600 4TB"
+      }
+    }
+  ],
+  "gallery": [
+    { "id": 1, "image": "../assets/images/gaming_beast.jpg" },
+    { "id": 2, "image": "../assets/images/workstation.jpg" },
+    { "id": 3, "image": "../assets/images/budget_pc.jpg" },
+    { "id": 4, "image": "../assets/images/content_creator_1.jpg" },
+    { "id": 5, "image": "../assets/images/streaming.jpg" },
+    { "id": 6, "image": "../assets/images/high_end.jpg" }
+  ]
+}

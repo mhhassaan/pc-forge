@@ -1,0 +1,215 @@
+.learn-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.learn-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.learn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+  align-items: start;
+}
+
+.learn-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.learn-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 120, 215, 0.2);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.learn-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.learn-card .summary {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.learn-card .btn {
+  width: 100%;
+  /* push the button to the bottom so all buttons align across cards */
+  margin-top: auto;
+  margin-bottom: 1rem;
+  align-self: stretch;
+}
+
+
+
+/* ensure consistent card heights on wider screens so buttons line up */
+@media (min-width: 900px) {
+  .learn-card {
+    min-height: 360px;
+  }
+}
+
+.expanded-content {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.expanded-content.hidden {
+  display: none;
+}
+
+.expanded-content h3 {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.expanded-content h3:first-child {
+  margin-top: 0;
+}
+
+.expanded-content p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.expanded-content ul {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.expanded-content li {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.expanded-content li:before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+/* PC Diagram */
+.pc-diagram {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.pc-diagram h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.diagram {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.component-box {
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  border: 2px solid var(--border);
+}
+
+.cpu-box {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+  border-color: #ff6b6b;
+}
+
+.gpu-box {
+  background: linear-gradient(135deg, #4ecdc4, #44a08d);
+  border-color: #4ecdc4;
+}
+
+.ram-box {
+  background: linear-gradient(135deg, #f9ca24, #f0932b);
+  border-color: #f9ca24;
+}
+
+.storage-box {
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  border-color: #a8edea;
+  color: #000;
+}
+
+.psu-box {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-color: #667eea;
+}
+
+.mobo-box {
+  background: linear-gradient(135deg, var(--primary), #0056a8);
+  border-color: var(--primary);
+  grid-column: 1 / -1;
+}
+
+.diagram-text {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .learn-container {
+    padding: 1rem;
+  }
+
+  .learn-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .learn-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diagram {
+    grid-template-columns: 1fr;
+  }
+
+  .mobo-box {
+    grid-column: 1;
+  }
+}
